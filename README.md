@@ -1,54 +1,44 @@
-# Performance Matters @cmda-minor-web · 2018-2019
+## Features tested and how to fix?
+The assignment for this week was to test 8 features:
 
-In dit vak gaan we de eerder bij de OBA gemaakte client side web applicatie ombouwen naar een server side gerenderde applicatie. Verder gaan we een reeks van optimalisaties doorvoeren om de performance van de applicatie te verbeteren. Uiteindelijk zorgen we ervoor dat de applicatie offline beschikbaar.
-
-## Leerdoelen
-- _Je weet het verschil tussen client side en server side rendering en kan server side rendering toepassen_
-- _Je begrijpt hoe de critical render path werkt, en hoe je deze kan optimaliseren voor een betere runtime en/of perceived performance._
-- _Je begrijpt hoe een Service Worker werkt en kan deze in jou applicatie implementeren._
-
-[Rubric](https://docs.google.com/spreadsheets/d/e/2PACX-1vTO-pc2UMvpT0pUjt6NJeckc5N9E7QvCxEfVJW1JjuM0m_9MM8ra05J0s6br486Rocz5JVMhAX_C37_/pubhtml?gid=0&single=true)
-
-## Lesprogramma
-
-### Week 1 - Server Side rendering
-
-Doel: Webpagina's server side renderen
-
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-1.md)
-
-[Slides](...)
-
-### Week 2 - Critical Rendering Path  
-
-Doel: Critical Rendering path optimaliseren
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-2.md)
-
-[Slides](...)
-
-### Week 3 - Going Offline 
-
-Doel: Webpagina's offline beschikbaar stellen
-
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-3.md)
-
-[Slides](...)
+1. Turn off images
+2. Turn off custom fonts
+3. Turn off color and test colourblindness
+4. Mouse/trackpad
+5. Broadband
+6. Javascript turn off
+7. Cookies
+8. LocalStorage
+ 
+#### 1. Turn off images
+When you turn off images in your browser, it still shows SVG images. That's why I decided to make the icons and selfmade png files into SVG files.
 
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+#### 2. Custom fonts
+During testing it turned out that custom fonts does not work on every browser. To prevent this problem, a fallback font was used and a standard font that should be suitable for most browsers.
 
-<!-- ☝️ replace this description with a description of your own work -->
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+#### 3. Turn off color and test colourblindness
+I only used colors for website styling. Such as dividing the sections elements. I also gave a blue outline to the focus elements on which the tab function is located. But because this blue frame does not stand out on every element for example the genre checkboxes, I have given a focus status.
 
-<!-- Maybe a table of contents here? 📚 -->
+#### 4. Mouse/trackpad
+I have added a focus state for the mouse and trackpad. During testing, I discovered that the check boxes could not be focused at all. The reason was because the element was " display hidden". After this issue is resolved, the element could be focused on. The problem that followed was that the focus was not clear to the user. So to fix that problem, I added an `transform scale`. Now when the user is focusing on an element, the element become bigger/smaller.
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+#### 5. Broadband
+To prevent broadband in my concept, I tried to keep everything as small as possible, like:
+• Minify Javascript
+• Minify CSS
+• Use SVG instead png
+• Compress images
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+#### 6. Javacsript turn off
+my first concept was all made in javascript, which completely broke the website when Javascript was turned off. That is why this prototype has been completely written to Node JS so that the website can function without javascript.
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
+#### 7. Cookies & 8. LocalStorage
+My website currently does not use cookies and local storage
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+## Screenreader testing and device lab
+During testing I was only able to test the screen readers. It showed that I had to add much better alt tags to images.
+
+Unfortunately, I didn't have enough time for testing on different devices. The only thing I know is that my oba website breaks completely on mobile and tablet, since everything is styled for laptop size.
