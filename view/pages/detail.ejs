@@ -1,0 +1,60 @@
+<% include ../partials/head.ejs %>
+
+<header>
+	<% include ../partials/header.ejs %>
+</header>
+ 
+<main>
+	<section id="detailsection">
+	<% if (detailBook) { detailBook.forEach(function(book) { %>
+		<article>
+			<h1><%= book.title %> </h1>
+			<img src="<%= book.cover_image %>" alt="img" />
+			<p><b>Omschrijving: </b> <%= book.description %> </p>
+			<p><b>Auteur: </b> <%= book.author %> </p>
+			<p><b>Publicatie: </b> <%= book.publication_year %> </p>
+			<p><b>Doelgroep: </b> <%= book.doelgroep %> </p>
+        </article>
+  	<% })} %>
+  	</section>
+
+    <section class=" elementToFade" id="todo">
+		<h1>Waar ligt het boek?</h1>
+		<div class="container">
+			<img src="./afdeling.jpg" alt="afdeling">
+			<article>
+				<input type="checkbox" id="step1"/>
+				<label for="step1" name="step1">Ga <span>1</span> verdieping naar beneden.</label>
+			</article>
+			<img class="arrow" src="./arrowblue.svg" alt="arrow">
+			
+			<img class="arrow" src="./arrowpink.svg" alt="arrow">
+			<article>
+				<input type="checkbox" id="step2"/>
+				<label for="step2" name="step2">Jij staat op de <span>X</span> markering. Loop vanaf dat punt naar de <span>eindmarkering</span></label>
+			</article>
+			<div>
+				<a href="./plattegrond.jpg" title="click here to see the full sized image">
+					<img src="./plattegrond.jpg" alt="plattegrond">
+				</a>
+			</div>
+
+			<img src="./kast.svg" alt="kast">
+			<article>
+				<input type="checkbox" id="step3"/>
+				<label for="step3" name="step1">Kijk op de <span>3e</span> plank van onder</label>
+			</article>
+			<img class="arrow" src="./arrowblue.svg" alt="arrow">
+
+			<img class="arrow" src="./finish.svg" alt="finish">
+			<article>
+				<input type="checkbox" id="step4"/>
+				<label for="step4" name="step2"><span>Zoek</span> naar je gekozen boek!</label>
+			</article>
+			<img src="./search.svg" alt="search">
+		</div>
+	</section>
+          
+</main>
+
+
