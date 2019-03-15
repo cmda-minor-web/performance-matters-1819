@@ -10,8 +10,8 @@
 	<h1>Kies je genre!</h1>
 	<form method="post" action="/">
 		<% if (genre) { genre.forEach(function(book) { %>
-  		<input type="checkbox" id="<%=book%>" name=<%= book %> value="<%= book %>">
-  		<label class="genre" for="<%=book%>"></label>
+  		<input type="checkbox" id="<%=book%>" name=<%=book%> value="<%=book%>">
+  		<label class="genre" for="<%=book%>"><%=book%></label>
   	<% })} %>
   	<button type="submit">Filter</button>
 	</form>
