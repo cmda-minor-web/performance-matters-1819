@@ -1,44 +1,35 @@
-## Features tested and how to fix?
-The assignment for this week was to test 8 features:
+## Download and install
+First you have to download or clone this document with the following command:
 
-1. Turn off images
-2. Turn off custom fonts
-3. Turn off color and test colourblindness
-4. Mouse/trackpad
-5. Broadband
-6. Javascript turn off
-7. Cookies
-8. LocalStorage
- 
-#### 1. Turn off images
-When you turn off images in your browser, it still shows SVG images. That's why I decided to make the icons and selfmade png files into SVG files.
+```
+git clone https://github.com/Karinliu/performance-matters-1819.git
+
+cd performance-matters-1819
+```
+
+After you have cloned this project, you have to `npm install` all the documents.
 
 
-#### 2. Custom fonts
-During testing it turned out that custom fonts does not work on every browser. To prevent this problem, a fallback font was used and a standard font that should be suitable for most browsers.
+#### Run this project
+To run this project you can use one of the following commands:
+
+• npm run dev
+• node app.js
 
 
-#### 3. Turn off color and test colourblindness
-I only used colors for website styling. Such as dividing the sections elements. I also gave a blue outline to the focus elements on which the tab function is located. But because this blue frame does not stand out on every element for example the genre checkboxes, I have given a focus status.
+## Scripts
+For my project I have used one npm script: [Nodemon](https://www.npmjs.com/package/nodemon).
 
-#### 4. Mouse/trackpad
-I have added a focus state for the mouse and trackpad. During testing, I discovered that the check boxes could not be focused at all. The reason was because the element was " display hidden". After this issue is resolved, the element could be focused on. The problem that followed was that the focus was not clear to the user. So to fix that problem, I added an `transform scale`. Now when the user is focusing on an element, the element become bigger/smaller.
+Nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 
-#### 5. Broadband
-To prevent broadband in my concept, I tried to keep everything as small as possible, like:
-• Minify Javascript
-• Minify CSS
-• Use SVG instead png
-• Compress images
+To install Nodemon, I did the following steps:
 
-#### 6. Javacsript turn off
-my first concept was all made in javascript, which completely broke the website when Javascript was turned off. That is why this prototype has been completely written to Node JS so that the website can function without javascript.
-
-#### 7. Cookies & 8. LocalStorage
-My website currently does not use cookies and local storage
+1. `npm i nodemon`
+2. Go to `package.json` and add a JSON config command line. For example what I have in my scripts: `dev": "nodemon app.js`
+3. After you have added this line in your package.json you can run it with your terminal with the following command: `npm run dev`.
 
 
-## Screenreader testing and device lab
-During testing I was only able to test the screen readers. It showed that I had to add much better alt tags to images.
 
-Unfortunately, I didn't have enough time for testing on different devices. The only thing I know is that my oba website breaks completely on mobile and tablet, since everything is styled for laptop size.
+
+
+
