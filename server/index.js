@@ -13,10 +13,12 @@ const app = express()
 var compression = require('compression')
 app.use(compression())
 
+app.enable('view cache')
+
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(
-  express.static(__dirname + '/public', {
+  express.static(__dirname + '/dist', {
     maxAge: '365d',
     lastModified: '',
     etag: ''
