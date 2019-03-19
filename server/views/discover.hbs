@@ -1,0 +1,27 @@
+<div class="back">
+  <a href="../">Back to home</a>
+</div>
+<div class="disc">
+  <div class="disc-start">
+    <img src="{{ artist.image.big }}" alt="{{ artist.image }}">
+
+    <h1>Discover a artist based on <span>{{ artist.name }}</span></h1>
+  </div>
+
+  <div class="disc-start-similair" id="similair">
+    <ul>
+      {{#each artist.similar}}
+          <li class="artist-single">
+            <img src="{{ this.image.big }}" alt="{{ this.name }}">
+            <h2>{{this.name}}</h2>
+
+            <button type="button" value="{{ this.name }}">Choose</button>
+          </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+<div id="end"></div>
+
+<script src="../js/main.js"></script>

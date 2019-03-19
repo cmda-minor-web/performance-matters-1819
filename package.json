@@ -1,0 +1,66 @@
+{
+  "name": "performance-matters-1819",
+  "version": "1.0.0",
+  "description": "In dit vak gaan we de eerder bij de OBA gemaakte client side web applicatie ombouwen naar een server side gerenderde applicatie. Verder gaan we een reeks van optimalisaties doorvoeren om de performance van de applicatie te verbeteren. Uiteindelijk zorgen we ervoor dat de applicatie offline beschikbaar.",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.2",
+    "compression": "^1.7.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "express-validator": "^5.3.1",
+    "spdy": "^4.0.0"
+  },
+  "devDependencies": {
+    "bread-compressor-cli": "^1.0.5",
+    "gulp": "^4.0.0",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4",
+    "sharp": "^0.21.3",
+    "webp-converter": "^2.2.2",
+    "xo": "^0.24.0"
+  },
+  "scripts": {
+    "format": "prettier --write \"server/**/*.js\"",
+    "xo": "xo",
+    "sass": "node_modules/.bin/node-sass --include-path scss server/scss/main.scss server/public/css/main.css",
+    "sass-watch": "node_modules/.bin/nodemon -e scss -x npm run sass",
+    "sass-minify": "node_modules/.bin/node-sass --include-path scss server/scss/main.scss server/public/css/min-main.css --output-style compressed",
+    "server": "node_modules/.bin/nodemon server/index.js",
+    "watch": "npm run sass-watch & npm run server",
+    "test": "node_modules/.bin/nodemon server/data-test.js && npm run sass-watch",
+    "cweb": "node_modules/.bin/nodemon helpers/cwebp.js",
+    "build": "npm run sass-minify",
+    "compress": "bread-compressor ./server/public"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "xo": {
+    "extends": [
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Denniswegereef/performance-matters-1819.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Denniswegereef/performance-matters-1819/issues"
+  },
+  "homepage": "https://github.com/Denniswegereef/performance-matters-1819#readme"
+}

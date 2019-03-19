@@ -1,0 +1,77 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #1c1d24;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Noto Sans', sans-serif;
+  color: $white;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Noto Sans', sans-serif;
+  color: $white;
+}
+
+p {
+  margin-bottom: 1.2rem;
+  font-family: 'Varela', sans-serif;
+  color: $white;
+}
+
+a {
+  font-family: 'Varela', sans-serif;
+  transition: all 0.2s;
+  &:hover {
+    background-color: $mainColor;
+    color: $white;
+  }
+}
+button {
+  background-color: #f80244;
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  padding: 0.6rem 0.9rem;
+  min-width: 6rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input {
+  padding: 0.6rem 0.9rem;
+  font-size: 1.1rem;
+  border: none;
+  background: #fff;
+}
