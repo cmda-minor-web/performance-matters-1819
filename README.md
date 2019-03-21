@@ -53,3 +53,11 @@ Sadly it doesn't have much documentation about it and I still need to figure out
 ![items](docs/images/handlebars-cache.png)
 
 **Conclusion:** I really don't have a idea why it's slower than without it. But it's hard to test and maby it has something to do with production mode? Don't know honestly...
+
+#### Revisioning
+
+I used [gulp-rev](https://www.npmjs.com/package/gulp-rev) --> currently a little broking :)
+
+#### Compression
+
+Honestly, I used gzip compression for everything, I coudn't get brotli to work for now.

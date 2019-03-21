@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 
 const chalk = require('chalk')
 
+var shrinkRay = require('shrink-ray')
+
 const api = require('./helpers/api.js')
 const clean = require('./helpers/clean-data.js')
 
@@ -12,8 +14,6 @@ const app = express()
 // Compress
 var compression = require('compression')
 app.use(compression())
-
-app.enable('view cache')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -24,6 +24,8 @@ app.use(
     etag: ''
   })
 )
+
+app.use(shrinkRay())
 
 app.engine(
   '.hbs',
