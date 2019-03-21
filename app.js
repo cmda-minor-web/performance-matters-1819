@@ -1,21 +1,29 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs')
+// const fetch = require("node-fetch")
 const app = express()
     .set('view engine', 'ejs')
     .set('views', 'view')
     .use(express.static('./src/css'))
+    .use(setHeader)
     .use(express.static('./src/images'))
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({extended: true}))
     .get('/', index)
     .get('/:id', detail)
-    .post("/", index)
+    .post("/", index) 
  
-const port = 3000
+const port = 3000 
 
+function setHeader(req, res, next){
+    res.setHeader('Cache-Control', 'max-age=' + 365 * 24 * 60 * 60); 
+    next();
+}
 
 function index(req, res) {
+    // fetch("https://raw.githubusercontent.com/Karinliu/performance-matters-1819/master/src/results.json")
+    //     .then()
     fs.readFile('./src/results.json', function(error, data) {
         if (error) throw error;
         const jsonData = JSON.parse(data.toString());
@@ -71,6 +79,6 @@ function detail(req, res) {
             detailBook: detailResult
         });
     });
-}
+} 
 
 app.listen(3000, () => console.log(`Example app listening on port ${port}!`))

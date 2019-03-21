@@ -24,7 +24,6 @@ nav ul li {
     width: 4.2em;
     height: 3em;
     margin-left: 1em;
-    /*margin-top: 1em;*/
 }
 
 nav ul li:nth-of-type(1){
@@ -111,7 +110,6 @@ form button:hover{
     transition: 0.5s;
     opacity: 0.85;
 }
-
 
 h1{
     font-size: 2em;
