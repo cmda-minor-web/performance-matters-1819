@@ -61,3 +61,15 @@ I used [gulp-rev](https://www.npmjs.com/package/gulp-rev) --> currently a little
 #### Compression
 
 Honestly, I used gzip compression for everything, I coudn't get brotli to work for now.
+
+#### Images WEBP format
+
+It is significant faster to render these images, I converted them before on the server so it doesn't have to convert them in the page render. This is on slow 3g.
+
+##### PNG
+
+![png](docs/images/pngimages.png)
+
+##### WEBP
+
+![webp](docs/images/webpimages.png)
